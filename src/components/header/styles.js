@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: fontSizes.xlarge,
+    fontFamily: 'Poppins-Bold',
     color: colors.white,
   },
 });

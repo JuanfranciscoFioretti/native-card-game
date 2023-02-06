@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: fontSizes.large,
+        fontFamily: 'Poppins-BoldItalic',
         color: colors.text,
         textAlign: 'center',
         paddingVertical: 20,
@@ -19,6 +20,9 @@ export const styles = StyleSheet.create({
         paddingVertical: 20,
         paddingHorizontal: 15,
         borderRadius: 15,
+    },
+    typeAnyNumber: {
+        fontFamily: 'Poppins-SemiBold',
     },
     label: {
         fontSize: fontSizes.medium,
@@ -32,6 +36,7 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 1,
         minWidth: 70,
         fontSize: fontSizes.xlarge,
+        fontFamily: 'Poppins-Black',
         paddingVertical: 10,
         marginBottom: 15,
         textAlign: 'center',
@@ -61,5 +66,6 @@ export const styles = StyleSheet.create({
     },
     confirmedTitle: {
         fontSize: fontSizes.medium,
+        fontFamily: 'Poppins-SemiBold',
     },
 });

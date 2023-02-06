@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     },
     number: {
         fontSize: fontSizes.large,
-        fontWeight: 'bold',
+        fontFamily: 'Poppins-Black',
         color: colors.text,
     },
 });

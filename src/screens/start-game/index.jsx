@@ -57,7 +57,7 @@ export const StartGame = ({ handlerStartGame }) => {
       <View style={styles.container}>
         <Text style={styles.title}>Start Game</Text>
         <Card style={styles.inputContainer}>
-          <Text>Type any number</Text>
+          <Text style={styles.typeAnyNumber}>Type any number</Text>
           <TextInput 
             value={enteredValue} 
             style={styles.input} 
