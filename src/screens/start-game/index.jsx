@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
+import { View, Text, TextInput, Button, TouchableWithoutFeedback, Keyboard, Alert, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { Card, NumberContainer } from "../../components";
 import { colors } from "../../constants/themes/colors";
@@ -34,6 +34,7 @@ export const StartGame = ({ handlerStartGame }) => {
 
   const onHandlerStartGame = () => {
     handlerStartGame(selectedNumber); 
+    // setConfirmed(true);
   }
 
   const Confirmed = () => confirmed ? (
@@ -51,38 +52,44 @@ export const StartGame = ({ handlerStartGame }) => {
   ) : null;
 
   return (
-    <TouchableWithoutFeedback onPress={() => {
-      Keyboard.dismiss();
-    }}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Start Game</Text>
-        <Card style={styles.inputContainer}>
-          <Text style={styles.typeAnyNumber}>Type any number</Text>
-          <TextInput 
-            value={enteredValue} 
-            style={styles.input} 
-            keyboardType="numeric" 
-            placeholder="0"
-            onChangeText={onHandlerChange}
-          />
-          <View style={styles.buttonContainer}>
-            <Button
-              style={styles.buttons}
-              title="Restart"
-              onPress={handlerRestartNumber}
-              color={colors.secondary}
-            />
-            <Button
-              style={styles.buttons}
-              title="Confirm"
-              onPress={handlerConfirmNumber}
-              color={colors.primary}
-            />
+    <KeyboardAvoidingView 
+      style={styles.containerScroll} 
+      behavior={Platform.OS === 'ios' ? 'height' : 'padding'}>
+      <TouchableWithoutFeedback onPress={() => {
+        Keyboard.dismiss();
+      }}>
+        <ScrollView style={styles.containerScroll}>
+          <View style={styles.container}>
+            <Text style={styles.title}>Start Game</Text>
+            <Card style={styles.inputContainer}>
+              <Text style={styles.typeAnyNumber}>Type any number</Text>
+              <TextInput 
+                value={enteredValue} 
+                style={styles.input} 
+                keyboardType="numeric" 
+                placeholder="0"
+                onChangeText={onHandlerChange}
+              />
+              <View style={styles.buttonContainer}>
+                <Button
+                  style={styles.buttons}
+                  title="Restart"
+                  onPress={handlerRestartNumber}
+                  color={colors.secondary}
+                />
+                <Button
+                  style={styles.buttons}
+                  title="Confirm"
+                  onPress={handlerConfirmNumber}
+                  color={colors.primary}
+                />
+              </View>
+            </Card>
+            <Confirmed/>
           </View>
-        </Card>
-        <Confirmed/>
-      </View>
-    </TouchableWithoutFeedback>
+        </ScrollView>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 };
 

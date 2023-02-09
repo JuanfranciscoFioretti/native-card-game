@@ -5,6 +5,11 @@ import { fontSizes } from "../../constants/themes/fonts";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
+        marginTop: 25,
+        height: 500,
+    },
+    containerScroll: {
+        flex: 1,
     },
     title: {
         fontSize: fontSizes.large,
@@ -16,6 +21,8 @@ export const styles = StyleSheet.create({
     inputContainer: {
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf: 'center',
+        width: '80%',
         marginHorizontal: 20,
         paddingVertical: 20,
         paddingHorizontal: 15,

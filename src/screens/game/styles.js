@@ -3,11 +3,15 @@ import { colors } from "../../constants/themes/colors";
 import { fontSizes } from "../../constants/themes/fonts";
 
 export const styles = StyleSheet.create({
+    scrollContainer: {
+        flex: 1,
+    },
     container: {
         flex: 1,
         justifyContent: 'center',
         backgroundColor: colors.white,
         width: '95%',
+        marginTop: 30
     },
     cardContent: {
         borderRadius: 15,
